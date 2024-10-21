@@ -1,88 +1,85 @@
-import type { WormholeConnectConfig } from '@wormhole-foundation/wormhole-connect'
-import WormholeConnect from '@wormhole-foundation/wormhole-connect'
+import WormholeConnect, {
+  WormholeConnectConfig,
+  nttRoutes,
+} from '@wormhole-foundation/wormhole-connect';
 
 const wormholeConfig: WormholeConnectConfig = {
-    env: 'testnet', // from deployment.json of the NTT deployment directory
-    networks: ['sepolia', 'solana'], // from https://github.com/wormhole-foundation/wormhole-connect/blob/development/wormhole-connect/src/config/testnet/chains.ts#L170
-    // tokens: ['FTTsep', 'FTTsol'],  // this will limit the available tokens that can be transferred to the other chain
-    // routes: ['nttManual'], // this will limit the available routes - from https://github.com/wormhole-foundation/wormhole-connect/blob/d7a6b67b18db2c8eb4a249d19ef77d0174deffbe/wormhole-connect/src/config/types.ts#L70
-    bridgeDefaults: {
-      fromNetwork: 'bsepolia',
-      toNetwork: 'solana'
+  network: 'Testnet',
+  isRouteSupportedHandler: async (td) => { if (td.route === 'AutomaticNtt' && td.fromChain === 'Solana') { return false; } return true; },
+  chains: ['ArbitrumSepolia', 'Solana'], // from https://github.com/wormhole-foundation/wormhole-connect/blob/development/wormhole-connect/src/config/testnet/chains.ts#L170
+  tokens: ['Warbsep', 'Wsol'],   // this will limit the available tokens that can be transferred to the other chain
+  ui: {
+    title: 'Wormhole Bridge',
+    defaultInputs: {
+      fromChain: 'ArbitrumSepolia',
+      toChain: 'Solana'
     },
-    nttGroups: {
-      FTT_NTT: { // arbitrary name for the ntt group
-        nttManagers: [
+    showHamburgerMenu: false,
+  },
+  routes: [
+    ...nttRoutes({
+      tokens: {
+        BRZ_NTT: [
           {
-            chainName: 'sepolia',
-            address: '0xeBdEFbC8111439449293A98f552a4BE57e2D5FAD', // nttManagers Address from deployment.json
-            tokenKey: 'FTTsep', 
-            transceivers: [
+            chain: 'ArbitrumSepolia',
+            manager: '0xeBdEFbC8111439449293A98f552a4BE57e2D5FAD',
+            token: '0xF7cbc69c6259Cf06582EEDF9477D58a15Dc5332e',
+            transceiver: [
               {
-                address: '0xf5D15B2F36A34918bD18C9D1382B98B9C22a7d3e', // transceivers address from deployment.json
-                type: 'wormhole'
-              }
-            ]
+                address: '0xf5D15B2F36A34918bD18C9D1382B98B9C22a7d3e',
+                type: 'wormhole',
+              },
+            ],
           },
           {
-            chainName: 'solana',
-            address: 'NTttPKktsauausafEimYigoDKfb193P94L3Vyff6LvV', // nttManagers Address from deployment.json
-            tokenKey: 'FTTsol',
-            transceivers: [
+            chain: 'Solana',
+            manager: 'NtTPyV3KBrW8YAnZbVhEMT2iqJrqnQTvfuoK3NQe5Rt',
+            token: 'GCzVVsjMjkg8EpoidnFW9bqegwhbp1GWGpzuSfhH6fyB',
+            transceiver: [
               {
-                address: 'AQmPbngJJHmKcC482pVshfLeS3KP4iK5q863a2DhH992', // transceivers address from deployment.json
-                type: 'wormhole'
-              }
-            ]
-          }
-        ]
-      }
+                address: 'AQmPbngJJHmKcC482pVshfLeS3KP4iK5q863a2DhH992',
+                type: 'wormhole',
+              },
+            ],
+          },
+        ],
+      },
+    }),
+  ],
+  tokensConfig: {
+    Warbsep: {
+      key: 'Warbsep',
+      symbol: 'W',
+      nativeChain: 'ArbitrumSepolia',  // will be shown as native only on this chain, otherwise as "Wormhole wrapped"
+      displayName: 'W', // name that is displayed in the Route
+      tokenId: {
+        chain: 'ArbitrumSepolia',
+        address: '0x5Eed9B952c110E47ddeC2843FF1f6B7C70131470'
+      },
+      coinGeckoId: 'wormhole', // coingecko api id
+      icon: 'https://wormhole.com/token.png',
+      decimals: 18
     },
 
-    tokensConfig: {
-      FTTsep: {
-        key: 'FTTsep',
-        symbol: 'FTT',
-        nativeChain: 'sepolia', // will be shown as native only on this chain, otherwise as "Wormhole wrapped"
-        displayName: 'FTT (Sep)', // name that is displayed in the Route
-        tokenId: {
-          chain: 'sepolia',
-          address: '0xF7cbc69c6259Cf06582EEDF9477D58a15Dc5332e' // token address
-        },
-        coinGeckoId: 'test',
-        icon: 'https://wormhole.com/token.png',
-        color: '#00C3D9',
-        decimals: {
-          Ethereum: 18,
-          default: 8
-        }
+    Wsol: {
+      key: 'Wsol',
+      symbol: 'W',
+      nativeChain: 'Solana', 
+      displayName: 'W', 
+      tokenId: {
+        chain: 'Solana',
+        address: 'jw8kpdKGFxwrsRze3NzxvUQZBhUsY1bmioQYQtR6PP5'
       },
-  
-      FTTsol: {
-        key: 'FTTsol',
-        symbol: 'FTT',
-        nativeChain: 'solana', // will be shown as native only on this chain, otherwise as "Wormhole wrapped"
-        displayName: 'FTT (Solana)', // name that is displayed in the Route
-        tokenId: {
-          chain: 'solana',
-          address: 'GCzVVsjMjkg8EpoidnFW9bqegwhbp1GWGpzuSfhH6fyB' // token address
-        },
-        coinGeckoId: 'test',
-        icon: 'https://wormhole.com/token.png',
-        color: '#00C3D9',
-        decimals: {
-          Solana: 9,
-          Ethereum: 9,
-          default: 8
-        }
-      }
+      coinGeckoId: 'wormhole',
+      icon: 'https://wormhole.com/token.png',
+      decimals: 9
     }
   }
+}
 
 function App() {
   return (
     <div>
-      <h1>My Wormhole Connect NTT App</h1>
       <WormholeConnect config={wormholeConfig} />
     </div>
   )
