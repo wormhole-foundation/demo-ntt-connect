@@ -1,8 +1,24 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(145deg, #2d3748 0%, #1a202c 100%);
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -39,4 +55,223 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Enhanced form styles */
+.token-form {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  position: relative;
+}
+
+.token-form::before {
+  content: "Bridge Configuration";
+  position: absolute;
+  top: -1rem;
+  left: 2.5rem;
+  background: #3b82f6;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+}
+
+.token-form div {
+  position: relative;
+}
+
+.token-form label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+.token-form input,
+.token-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.token-form input:hover,
+.token-form select:hover {
+  border-color: #d1d5db;
+}
+
+.token-form input:focus,
+.token-form select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.token-form input::placeholder {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.token-form button {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.025em;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.token-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.2)
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.token-form button:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.token-form button:hover::before {
+  transform: translateX(0);
+}
+
+.token-form button:active {
+  transform: translateY(1px);
+}
+
+/* Address input styling */
+.token-form input[type="text"][placeholder^="0x"] {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .token-form {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 2rem 1rem;
+    padding: 2rem 1.5rem;
+    gap: 1rem;
+  }
+  
+  .token-form::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Animation */
+@keyframes formAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.token-form {
+  animation: formAppear 0.4s ease-out;
+}
+
+/* Container for the entire app */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Bridge container styles */
+.bridge-container {
+  position: relative;
+  padding-top: 3rem;
+}
+
+/* Back button styles */
+.back-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.75rem 1.5rem;
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 9999px;
+  color: #4b5563;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #1f2937;
+  transform: translateY(-1px);
+}
+
+.back-button:active {
+  transform: translateY(0);
+}
+
+/* Animation for transitions */
+.token-form, .bridge-container {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
