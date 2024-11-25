@@ -7,6 +7,9 @@ import WormholeConnect, {
     network: 'Testnet',
     chains: ['ArbitrumSepolia', 'Solana'],
     tokens: ['WSVarbsep', 'WSVsol'],
+    rpcs: {
+      Solana: 'https://solana-mainnet.rpc.extrnode.com/YOUR_API_TOKEN',
+    },
     ui: {
       title: 'Wormhole NTT UI',
       defaultInputs: {
