@@ -15,6 +15,7 @@ export function getQueryParams(): Partial<UserTokenInput> {
 		"coinGeckoId",
 		"erc20Address",
 	] as const;
+
 	for (const param of stringParams) {
 		const value = params.get(param);
 		if (value) {
@@ -33,10 +34,10 @@ export function getQueryParams(): Partial<UserTokenInput> {
 	for (const param of numberParams) {
 		const value = params.get(param);
 		if (value) {
-			queryParams[param] = Number.parseInt(
-				value,
-				10,
-			) as UserTokenInput[typeof param];
+			const parsedValue = Number.parseInt(value, 10);
+			if (!isNaN(parsedValue)) {
+				queryParams[param] = parsedValue as UserTokenInput[typeof param];
+			}
 		}
 	}
 
@@ -49,10 +50,16 @@ export function getQueryParams(): Partial<UserTokenInput> {
 	// Handle destination chains array
 	const destinationChains = params.get("destinationChains");
 	if (destinationChains) {
-		const chains = destinationChains.split(",");
+		const chains = destinationChains.split(",").filter(Boolean);
 		if (chains.length > 0) {
-			queryParams.destinationChains = chains.map((chain) => chain as Chain);
+			queryParams.destinationChains = chains as Chain[];
+		} else {
+			// Provide default destination chain if none are specified
+			queryParams.destinationChains = ["BaseSepolia"] as Chain[];
 		}
+	} else {
+		// Ensure destinationChains is always an array
+		queryParams.destinationChains = ["BaseSepolia"] as Chain[];
 	}
 
 	return queryParams;
@@ -74,7 +81,7 @@ export function buildQueryUrl(input: Partial<UserTokenInput>): string {
 
 	for (const param of stringParams) {
 		if (input[param]) {
-			params.set(param, input[param]!);
+			params.set(param, input[param] as string);
 		}
 	}
 
@@ -87,7 +94,7 @@ export function buildQueryUrl(input: Partial<UserTokenInput>): string {
 	const numberParams = ["decimals", "erc20Decimals"] as const;
 	for (const param of numberParams) {
 		if (input[param] !== undefined) {
-			params.set(param, input[param]!.toString());
+			params.set(param, input[param]?.toString() ?? "");
 		}
 	}
 

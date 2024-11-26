@@ -20,8 +20,6 @@ export const generateWormholeConfig = (
 		erc20Decimals,
 	} = tokenInput;
 
-	console.log({ tokenInput });
-
 	const allChains = [sourceChain, ...destinationChains];
 	const tokens = allChains.map((chain) => `${symbol}${chain}`);
 

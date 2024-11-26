@@ -82,6 +82,8 @@ const lockingModeCfg: WormholeConnectConfig = {
 	},
 };
 
+console.info({ lockingModeCfg });
+
 function App() {
 	const [config, setConfig] = useState<WormholeConnectConfig | null>(null);
 	const [showForm, setShowForm] = useState(true);
@@ -111,7 +113,19 @@ function App() {
 			erc20Decimals: queryParams.erc20Decimals!,
 		};
 
-		console.log({ fullParams });
+		if (
+			!fullParams.symbol ||
+			!fullParams.manager ||
+			!fullParams.token ||
+			!fullParams.transceiver ||
+			!fullParams.sourceChain ||
+			!fullParams.destinationChains.length ||
+			(fullParams.nttType === "Extended" && !fullParams.erc20Address)
+		) {
+			setShowForm(true);
+			return;
+		}
+
 		handleTokenSubmit(fullParams);
 		setShowForm(false);
 	}, []);
@@ -120,8 +134,6 @@ function App() {
 		const newConfig = generateWormholeConfig(tokenInput);
 		setConfig(newConfig);
 	};
-
-	console.log({ config, lockingModeCfg });
 
 	return (
 		<div className="container">
