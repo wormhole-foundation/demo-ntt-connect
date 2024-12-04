@@ -1,16 +1,17 @@
 import WormholeConnect, {
     WormholeConnectConfig,
     nttRoutes,
+    WormholeConnectTheme,
   } from '@wormhole-foundation/wormhole-connect';
   
   const wormholeConfig: WormholeConnectConfig = {
     network: 'Testnet',
-    chains: ['ArbitrumSepolia', 'Solana'],
-    tokens: ['WSVarbsep', 'WSVsol'],
+    chains: ['Sepolia', 'Solana', 'BaseSepolia'],
+    tokens: ['WSVsep', 'WSVsol', 'WSVbase'],
     ui: {
       title: 'Wormhole NTT UI',
       defaultInputs: {
-        fromChain: 'ArbitrumSepolia',
+        fromChain: 'Sepolia',
         toChain: 'Solana'
       },
       showHamburgerMenu: false,
@@ -20,23 +21,34 @@ import WormholeConnect, {
         tokens: {
           WSV_NTT: [
             {
-              chain: 'ArbitrumSepolia',
-              manager: '0x3F52328B390276eFF9C77940Bc7F81e098De5Ed1',
-              token: '0xff1Fa5B426C6155fbc7e22da6700Ad8C95Da01F4',
+              chain: 'Sepolia',
+              manager: '0xD1542431f7da242Beebb72F283810fd6A40c62F7',
+              token: '0xAdB9299DCeAc8440844Ee1C980bf7F4fCc26780A',
               transceiver: [
                 {
-                  address: '0xA12b94F1a82fbd3bD2721659e692A6467b3Fe478',
+                  address: '0x4C4e885E273e162b81a7D842521Eb1C9342c1d30',
                   type: 'wormhole',
                 },
               ],
             },
             {
               chain: 'Solana',
-              manager: 'ntNGLGC45T7X1cMX6ezdPdcZDUwEQL3sb62nhEVhLwa',
-              token: 'Hyfw9cTZbMaWJqBcWxutVkT8NLuCwixbdGj6zWY7amD2',
+              manager: 'nMxHx1o8GUg2pv99y8JAQb5RyWNqDWixbxWCaBcurQx',
+              token: '2vLDzr7hUpLFHQotmR8EPcMTWczZUwCK31aefAzumkmv',
               transceiver: [
                 {
-                  address: '2PeCzGTK2j4cMSb2yZQxLfVBbnsuenf7i3KdSTRfPRZi',
+                  address: 'AjL3f9FMHJ8VkNUHZqLYxa5aFy3aTN6LUWMv4qmdf5PN',
+                  type: 'wormhole',
+                },
+              ],
+            },
+            {
+              chain: 'BaseSepolia',
+              manager: '0xaE02Ff9C3781C5BA295c522fB469B87Dc5EE9205',
+              token: '0xb8dccDA8C166172159F029eb003d5479687452bD',
+              transceiver: [
+                {
+                  address: '0xF4Af1Eac8995766b54210b179A837E3D59a9F146',
                   type: 'wormhole',
                 },
               ],
@@ -46,20 +58,19 @@ import WormholeConnect, {
       }),
     ],
     tokensConfig: {
-      WSVarbsep: {
-        key: 'WSVarbsep',
+      WSVsep: {
+        key: 'WSVsep',
         symbol: 'WSV',
-        nativeChain: 'ArbitrumSepolia',
+        nativeChain: 'Sepolia',
         displayName: 'WSV',
         tokenId: {
-          chain: 'ArbitrumSepolia',
-          address: '0xff1Fa5B426C6155fbc7e22da6700Ad8C95Da01F4'
+          chain: 'Sepolia',
+          address: '0xAdB9299DCeAc8440844Ee1C980bf7F4fCc26780A'
         },
         coinGeckoId: 'wormhole',
         icon: 'https://wormhole.com/token.png',
         decimals: 18
       },
-  
       WSVsol: {
         key: 'WSVsol',
         symbol: 'WSV',
@@ -67,7 +78,20 @@ import WormholeConnect, {
         displayName: 'WSV',
         tokenId: {
           chain: 'Solana',
-          address: 'Hyfw9cTZbMaWJqBcWxutVkT8NLuCwixbdGj6zWY7amD2'
+          address: '2vLDzr7hUpLFHQotmR8EPcMTWczZUwCK31aefAzumkmv'
+        },
+        coinGeckoId: 'wormhole',
+        icon: 'https://wormhole.com/token.png',
+        decimals: 9
+      },
+      WSVbase: {
+        key: 'WSVbase',
+        symbol: 'WSV',
+        nativeChain: 'BaseSepolia',
+        displayName: 'WSV',
+        tokenId: {
+          chain: 'BaseSepolia',
+          address: '0xb8dccDA8C166172159F029eb003d5479687452bD'
         },
         coinGeckoId: 'wormhole',
         icon: 'https://wormhole.com/token.png',
@@ -77,9 +101,14 @@ import WormholeConnect, {
   }
   
   function App() {
+    const theme: WormholeConnectTheme = {
+      mode: 'dark',
+      primary: '#78c4b6',
+    };
+
     return (
       <div>
-        <WormholeConnect config={wormholeConfig} />
+        <WormholeConnect config={wormholeConfig} theme={theme} />
       </div>
     )
   }

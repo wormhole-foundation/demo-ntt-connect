@@ -5324,10 +5324,10 @@
     "@wormhole-foundation/sdk-sui-core" "1.1.1"
     "@wormhole-foundation/sdk-sui-tokenbridge" "1.1.1"
 
-"@wormhole-foundation/wormhole-connect@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@wormhole-foundation/wormhole-connect/-/wormhole-connect-1.1.5.tgz#3459dd3887811ffee16a45ffc267e65c731e3e0f"
-  integrity sha512-OCFLjwQVMcjxb8Hue8qOHcJANsse55glonhwY7L4HPviGeDT5zvlaGo1xn+iFFHeJY/F2JRX4y9MMaaBTf2iog==
+"@wormhole-foundation/wormhole-connect@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@wormhole-foundation/wormhole-connect/-/wormhole-connect-1.1.6.tgz#2eb8914386b7a2e996e6c747f3d8204002afe83b"
+  integrity sha512-6v7p8sn1HTAY0XLmqE8VCWhwBQh9Eqafx19HXXvSP6k3oEa/G2soGZqXX0Eg2V5/gH/5hB6VvuKWSa9KoMmrVA==
   dependencies:
     "@coral-xyz/anchor" "^0.29.0"
     "@cosmjs/cosmwasm-stargate" "^0.31.3"
