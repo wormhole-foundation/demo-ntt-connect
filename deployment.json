@@ -1,0 +1,45 @@
+{
+    "network": "Testnet",
+    "chains": {
+      "Sepolia": {
+        "version": "1.1.0",
+        "mode": "burning",
+        "paused": false,
+        "owner": "0x6BEFE65d818F5d19b29E86e4F6820a0ee1643824",
+        "manager": "0x7331c4497f2D88739666aAeb99df71Da053943Fe",
+        "token": "0xA7Fd6143826f06D12381605fccE984dE89baD232",
+        "transceivers": {
+          "threshold": 1,
+          "wormhole": {
+            "address": "0xfefF125C049bCe6230c38B1d17d7AC3f6FF37524",
+            "pauser": "0x6BEFE65d818F5d19b29E86e4F6820a0ee1643824"
+          }
+        },
+        "limits": {
+          "outbound": "184467440737.095516150000000000",
+          "inbound": {}
+        },
+        "pauser": "0x6BEFE65d818F5d19b29E86e4F6820a0ee1643824"
+      },
+      "BaseSepolia": {
+        "version": "1.1.0",
+        "mode": "burning",
+        "paused": false,
+        "owner": "0x6BEFE65d818F5d19b29E86e4F6820a0ee1643824",
+        "manager": "0x7331c4497f2D88739666aAeb99df71Da053943Fe",
+        "token": "0xA7Fd6143826f06D12381605fccE984dE89baD232",
+        "transceivers": {
+          "threshold": 1,
+          "wormhole": {
+            "address": "0xfefF125C049bCe6230c38B1d17d7AC3f6FF37524",
+            "pauser": "0x6BEFE65d818F5d19b29E86e4F6820a0ee1643824"
+          }
+        },
+        "limits": {
+          "outbound": "184467440737.095516150000000000",
+          "inbound": {}
+        },
+        "pauser": "0x6BEFE65d818F5d19b29E86e4F6820a0ee1643824"
+      }
+    }
+  }

@@ -6,13 +6,13 @@ import WormholeConnect, {
   
   const wormholeConfig: WormholeConnectConfig = {
     network: 'Testnet',
-    chains: ['Sepolia', 'Solana', 'BaseSepolia'],
-    tokens: ['WSVsep', 'WSVsol', 'WSVbase'],
+    chains: ['Sepolia', 'BaseSepolia'],
+    tokens: ['TestSep', 'TestBase'],
     ui: {
       title: 'Wormhole NTT UI',
       defaultInputs: {
         fromChain: 'Sepolia',
-        toChain: 'Solana'
+        toChain: 'BaseSepolia'
       },
       showHamburgerMenu: false,
     },
@@ -22,33 +22,22 @@ import WormholeConnect, {
           WSV_NTT: [
             {
               chain: 'Sepolia',
-              manager: '0xD1542431f7da242Beebb72F283810fd6A40c62F7',
-              token: '0xAdB9299DCeAc8440844Ee1C980bf7F4fCc26780A',
+              manager: '0x7331c4497f2D88739666aAeb99df71Da053943Fe',
+              token: '0xA7Fd6143826f06D12381605fccE984dE89baD232',
               transceiver: [
                 {
-                  address: '0x4C4e885E273e162b81a7D842521Eb1C9342c1d30',
-                  type: 'wormhole',
-                },
-              ],
-            },
-            {
-              chain: 'Solana',
-              manager: 'nMxHx1o8GUg2pv99y8JAQb5RyWNqDWixbxWCaBcurQx',
-              token: '2vLDzr7hUpLFHQotmR8EPcMTWczZUwCK31aefAzumkmv',
-              transceiver: [
-                {
-                  address: 'AjL3f9FMHJ8VkNUHZqLYxa5aFy3aTN6LUWMv4qmdf5PN',
+                  address: '0xfefF125C049bCe6230c38B1d17d7AC3f6FF37524',
                   type: 'wormhole',
                 },
               ],
             },
             {
               chain: 'BaseSepolia',
-              manager: '0xaE02Ff9C3781C5BA295c522fB469B87Dc5EE9205',
-              token: '0xb8dccDA8C166172159F029eb003d5479687452bD',
+              manager: '0x7331c4497f2D88739666aAeb99df71Da053943Fe',
+              token: '0xA7Fd6143826f06D12381605fccE984dE89baD232',
               transceiver: [
                 {
-                  address: '0xF4Af1Eac8995766b54210b179A837E3D59a9F146',
+                  address: '0xfefF125C049bCe6230c38B1d17d7AC3f6FF37524',
                   type: 'wormhole',
                 },
               ],
@@ -58,44 +47,31 @@ import WormholeConnect, {
       }),
     ],
     tokensConfig: {
-      WSVsep: {
-        key: 'WSVsep',
-        symbol: 'WSV',
+      TestSep: {
+        key: 'TestSep',
+        symbol: 'WANDER',
         nativeChain: 'Sepolia',
-        displayName: 'WSV',
+        displayName: 'WANDER',
         tokenId: {
           chain: 'Sepolia',
-          address: '0xAdB9299DCeAc8440844Ee1C980bf7F4fCc26780A'
+          address: '0xA7Fd6143826f06D12381605fccE984dE89baD232'
         },
         coinGeckoId: 'wormhole',
-        icon: 'https://wormhole.com/token.png',
+        icon: 'https://cms.wanderers.ai/assets/827e8d07-4afe-4062-8db7-b8a47f57b4e4.png',
         decimals: 18
       },
-      WSVsol: {
-        key: 'WSVsol',
-        symbol: 'WSV',
-        nativeChain: 'Solana',
-        displayName: 'WSV',
-        tokenId: {
-          chain: 'Solana',
-          address: '2vLDzr7hUpLFHQotmR8EPcMTWczZUwCK31aefAzumkmv'
-        },
-        coinGeckoId: 'wormhole',
-        icon: 'https://wormhole.com/token.png',
-        decimals: 9
-      },
-      WSVbase: {
-        key: 'WSVbase',
-        symbol: 'WSV',
+      TestBase: {
+        key: 'TestBase',
+        symbol: 'WANDER',
         nativeChain: 'BaseSepolia',
-        displayName: 'WSV',
+        displayName: 'WANDER',
         tokenId: {
           chain: 'BaseSepolia',
-          address: '0xb8dccDA8C166172159F029eb003d5479687452bD'
+          address: '0xA7Fd6143826f06D12381605fccE984dE89baD232'
         },
         coinGeckoId: 'wormhole',
-        icon: 'https://wormhole.com/token.png',
-        decimals: 9
+        icon: 'https://cms.wanderers.ai/assets/827e8d07-4afe-4062-8db7-b8a47f57b4e4.png',
+        decimals: 18
       }
     }
   }
