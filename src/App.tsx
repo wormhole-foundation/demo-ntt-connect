@@ -5,14 +5,14 @@ import WormholeConnect, {
   } from '@wormhole-foundation/wormhole-connect';
   
   const wormholeConfig: WormholeConnectConfig = {
-    network: 'Testnet',
-    chains: ['Sepolia', 'BaseSepolia'],
-    tokens: ['TestSep', 'TestBase'],
+    network: 'Mainnet',
+    chains: ['Ethereum', 'Base'],
+    tokens: ['Wmain', 'Wbase'],
     ui: {
       title: 'Wormhole NTT UI',
       defaultInputs: {
-        fromChain: 'Sepolia',
-        toChain: 'BaseSepolia'
+        fromChain: 'Ethereum',
+        toChain: 'Base'
       },
       showHamburgerMenu: false,
     },
@@ -21,23 +21,23 @@ import WormholeConnect, {
         tokens: {
           WSV_NTT: [
             {
-              chain: 'Sepolia',
-              manager: '0x7331c4497f2D88739666aAeb99df71Da053943Fe',
-              token: '0xA7Fd6143826f06D12381605fccE984dE89baD232',
+              chain: 'Ethereum',
+              manager: '0xF6164E486caD82c3f8445389f93c306f5c26De1A',
+              token: '0x25c31B1F93F846C7c8debfD05898F162740A4581',
               transceiver: [
                 {
-                  address: '0xfefF125C049bCe6230c38B1d17d7AC3f6FF37524',
+                  address: '0x09Da0832CDb0aaC7cFe3598057d41D47067D9D62',
                   type: 'wormhole',
                 },
               ],
             },
             {
-              chain: 'BaseSepolia',
-              manager: '0x7331c4497f2D88739666aAeb99df71Da053943Fe',
-              token: '0xA7Fd6143826f06D12381605fccE984dE89baD232',
+              chain: 'Base',
+              manager: '0xD6d3f0d8a679c5ced453102AE7Eda3470CA8dd5a',
+              token: '0xef0fd52e65DdcDc201E2055a94D2aBff6fF10a7a',
               transceiver: [
                 {
-                  address: '0xfefF125C049bCe6230c38B1d17d7AC3f6FF37524',
+                  address: '0x747786f58caED8D28e1a5095421e1b392087259C',
                   type: 'wormhole',
                 },
               ],
@@ -47,27 +47,27 @@ import WormholeConnect, {
       }),
     ],
     tokensConfig: {
-      TestSep: {
-        key: 'TestSep',
+      WMain: {
+        key: 'Wmain',
         symbol: 'WANDER',
-        nativeChain: 'Sepolia',
+        nativeChain: 'Ethereum',
         displayName: 'WANDER',
         tokenId: {
-          chain: 'Sepolia',
-          address: '0xA7Fd6143826f06D12381605fccE984dE89baD232'
+          chain: 'Ethereum',
+          address: '0x25c31B1F93F846C7c8debfD05898F162740A4581'
         },
         coinGeckoId: 'wormhole',
         icon: 'https://cms.wanderers.ai/assets/827e8d07-4afe-4062-8db7-b8a47f57b4e4.png',
         decimals: 18
       },
-      TestBase: {
-        key: 'TestBase',
+      WBase: {
+        key: 'Wbase',
         symbol: 'WANDER',
-        nativeChain: 'BaseSepolia',
+        nativeChain: 'Base',
         displayName: 'WANDER',
         tokenId: {
-          chain: 'BaseSepolia',
-          address: '0xA7Fd6143826f06D12381605fccE984dE89baD232'
+          chain: 'Base',
+          address: '0xef0fd52e65DdcDc201E2055a94D2aBff6fF10a7a'
         },
         coinGeckoId: 'wormhole',
         icon: 'https://cms.wanderers.ai/assets/827e8d07-4afe-4062-8db7-b8a47f57b4e4.png',
