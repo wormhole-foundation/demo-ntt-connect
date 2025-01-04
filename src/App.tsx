@@ -7,7 +7,7 @@ import WormholeConnect, {
   const wormholeConfig: WormholeConnectConfig = {
     network: 'Mainnet',
     chains: ['Ethereum', 'Base'],
-    tokens: ['Wmain', 'Wbase'],
+    tokens: ['WMain', 'WBase'],
     ui: {
       title: 'Wormhole NTT UI',
       defaultInputs: {
@@ -48,7 +48,7 @@ import WormholeConnect, {
     ],
     tokensConfig: {
       WMain: {
-        key: 'Wmain',
+        key: 'WMain',
         symbol: 'WANDER',
         nativeChain: 'Ethereum',
         displayName: 'WANDER',
@@ -61,7 +61,7 @@ import WormholeConnect, {
         decimals: 18
       },
       WBase: {
-        key: 'Wbase',
+        key: 'WBase',
         symbol: 'WANDER',
         nativeChain: 'Base',
         displayName: 'WANDER',
