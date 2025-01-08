@@ -1,115 +1,96 @@
 import WormholeConnect, {
-    WormholeConnectConfig,
-    nttRoutes,
-    WormholeConnectTheme,
-  } from '@wormhole-foundation/wormhole-connect';
-  
-  const wormholeConfig: WormholeConnectConfig = {
-    network: 'Testnet',
-    chains: ['Sepolia', 'Solana', 'BaseSepolia'],
-    tokens: ['WSVsep', 'WSVsol', 'WSVbase'],
-    ui: {
-      title: 'Wormhole NTT UI',
-      defaultInputs: {
-        fromChain: 'Sepolia',
-        toChain: 'Solana'
-      },
-      showHamburgerMenu: false,
-    },
-    routes: [
-      ...nttRoutes({
-        tokens: {
-          WSV_NTT: [
-            {
-              chain: 'Sepolia',
-              manager: '0xD1542431f7da242Beebb72F283810fd6A40c62F7',
-              token: '0xAdB9299DCeAc8440844Ee1C980bf7F4fCc26780A',
-              transceiver: [
-                {
-                  address: '0x4C4e885E273e162b81a7D842521Eb1C9342c1d30',
-                  type: 'wormhole',
-                },
-              ],
-            },
-            {
-              chain: 'Solana',
-              manager: 'nMxHx1o8GUg2pv99y8JAQb5RyWNqDWixbxWCaBcurQx',
-              token: '2vLDzr7hUpLFHQotmR8EPcMTWczZUwCK31aefAzumkmv',
-              transceiver: [
-                {
-                  address: 'AjL3f9FMHJ8VkNUHZqLYxa5aFy3aTN6LUWMv4qmdf5PN',
-                  type: 'wormhole',
-                },
-              ],
-            },
-            {
-              chain: 'BaseSepolia',
-              manager: '0xaE02Ff9C3781C5BA295c522fB469B87Dc5EE9205',
-              token: '0xb8dccDA8C166172159F029eb003d5479687452bD',
-              transceiver: [
-                {
-                  address: '0xF4Af1Eac8995766b54210b179A837E3D59a9F146',
-                  type: 'wormhole',
-                },
-              ],
-            },
-          ],
-        },
-      }),
-    ],
-    tokensConfig: {
-      WSVsep: {
-        key: 'WSVsep',
-        symbol: 'WSV',
-        nativeChain: 'Sepolia',
-        displayName: 'WSV',
-        tokenId: {
-          chain: 'Sepolia',
-          address: '0xAdB9299DCeAc8440844Ee1C980bf7F4fCc26780A'
-        },
-        coinGeckoId: 'wormhole',
-        icon: 'https://wormhole.com/token.png',
-        decimals: 18
-      },
-      WSVsol: {
-        key: 'WSVsol',
-        symbol: 'WSV',
-        nativeChain: 'Solana',
-        displayName: 'WSV',
-        tokenId: {
-          chain: 'Solana',
-          address: '2vLDzr7hUpLFHQotmR8EPcMTWczZUwCK31aefAzumkmv'
-        },
-        coinGeckoId: 'wormhole',
-        icon: 'https://wormhole.com/token.png',
-        decimals: 9
-      },
-      WSVbase: {
-        key: 'WSVbase',
-        symbol: 'WSV',
-        nativeChain: 'BaseSepolia',
-        displayName: 'WSV',
-        tokenId: {
-          chain: 'BaseSepolia',
-          address: '0xb8dccDA8C166172159F029eb003d5479687452bD'
-        },
-        coinGeckoId: 'wormhole',
-        icon: 'https://wormhole.com/token.png',
-        decimals: 9
-      }
-    }
-  }
-  
-  function App() {
-    const theme: WormholeConnectTheme = {
-      mode: 'dark',
-      primary: '#78c4b6',
-    };
+  WormholeConnectConfig,
+  WormholeConnectTheme,
+  nttRoutes,
+} from "@wormhole-foundation/wormhole-connect";
 
-    return (
-      <div>
-        <WormholeConnect config={wormholeConfig} theme={theme} />
-      </div>
-    )
-  }
-  export default App
+const wormholeConfig: WormholeConnectConfig = {
+  rpcs: {
+    Ethereum: "https://mainnet.infura.io/v3/eaeb6102623148f4945597dd59028a5b",
+    Solana: "https://mainnet.helius-rpc.com/?api-key=4183bd01-9dc5-431f-92c1-162cab4e6e64",
+  },
+  network: "Mainnet",
+  chains: ["Ethereum", "Solana"],
+  tokens: ["BIOeth", "BIOsol"],
+  ui: {
+    title: "",
+    defaultInputs: {
+      fromChain: "Ethereum",
+      toChain: "Solana",
+    },
+    showHamburgerMenu: false,
+    walletConnectProjectId: "69c3c56dff9a59329d42b5c2f3bf20aa",
+  },
+  routes: [
+    ...nttRoutes({
+      tokens: {
+        BIO_NTT: [
+          {
+            chain: "Ethereum",
+            manager: "0x1783E7d1F498321D7E15044d769621E1beDc7F4C",
+            token: "0xcb1592591996765Ec0eFc1f92599A19767ee5ffA",
+            transceiver: [
+              {
+                address: "0x676Cd89c6B6f02d6975547fD7Da1d5A8dbc8a3E1",
+                type: "wormhole",
+              },
+            ],
+          },
+          {
+            chain: "Solana",
+            manager: "ntt11hdA4n1PupHhLyT1fsjg4YF9agVz3CTuzLRQs1H",
+            token: "bioJ9JTqW62MLz7UKHU69gtKhPpGi1BQhccj2kmSvUJ",
+            transceiver: [
+              {
+                address: "5Yaf3N7MAEThp5FBBjUri8rv9mWxFEiJBjTKYYeKEi37",
+                type: "wormhole",
+              },
+            ],
+          },
+        ],
+      },
+    }),
+  ],
+  tokensConfig: {
+    BIOsol: {
+      key: "BIOsol",
+      symbol: "BIO",
+      nativeChain: "Solana",
+      displayName: "BIO",
+      tokenId: {
+        chain: "Solana",
+        address: "bioJ9JTqW62MLz7UKHU69gtKhPpGi1BQhccj2kmSvUJ",
+      },
+      coinGeckoId: "bio-protocol",
+      icon: "https://499247139-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F3ba2jNU6BPQUl4RXgHor%2Fuploads%2FnVRhDT0Cg1c1FtdQQOMd%2FToken%20Symbol%20BIO%20Round.svg?alt=media&token=58f7ce22-da87-4a8f-80eb-5a4df20659f6",
+      decimals: 9,
+    },
+    BIOeth: {
+      key: "BIOeth",
+      symbol: "BIO",
+      nativeChain: "Ethereum",
+      displayName: "BIO",
+      tokenId: {
+        chain: "Ethereum",
+        address: "0xcb1592591996765Ec0eFc1f92599A19767ee5ffA",
+      },
+      coinGeckoId: "bio-protocol",
+      icon: "https://499247139-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F3ba2jNU6BPQUl4RXgHor%2Fuploads%2FnVRhDT0Cg1c1FtdQQOMd%2FToken%20Symbol%20BIO%20Round.svg?alt=media&token=58f7ce22-da87-4a8f-80eb-5a4df20659f6",
+      decimals: 18,
+    },
+
+  },
+};
+
+function App() {
+  const theme: WormholeConnectTheme = {
+    mode: 'dark',
+  };
+
+  return (
+    <div >
+      <WormholeConnect config={wormholeConfig} theme={theme} />
+    </div>
+  )
+}
+export default App
