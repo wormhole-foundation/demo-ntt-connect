@@ -6,8 +6,8 @@ import WormholeConnect, {
 
 const wormholeConfig: WormholeConnectConfig = {
   rpcs: {
-    Ethereum: "https://mainnet.infura.io/v3/eaeb6102623148f4945597dd59028a5b",
-    Solana: "https://mainnet.helius-rpc.com/?api-key=4183bd01-9dc5-431f-92c1-162cab4e6e64",
+    Ethereum: import.meta.env.VITE_PUBLIC_ETHEREUM_RPC_URL,
+    Solana: import.meta.env.VITE_PUBLIC_SOLANA_RPC_URL,
   },
   network: "Mainnet",
   chains: ["Ethereum", "Solana"],
