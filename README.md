@@ -31,7 +31,6 @@ npm install
 # Or using yarn
 yarn
 ```
-```
 
 ### 3. Adjust WormholeConnectConfig
 
