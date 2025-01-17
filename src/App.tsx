@@ -16,6 +16,10 @@ import WormholeConnect, {
       },
       showHamburgerMenu: false,
     },
+    // TODO: use a private RPC for mainnet
+    // rpcs: {
+    //   Solana: 'https://mainnet.helius-rpc.com/?api-key=$KEY',
+    // },
     routes: [
       ...nttRoutes({
         tokens: {
