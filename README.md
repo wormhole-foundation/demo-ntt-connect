@@ -49,3 +49,6 @@ or, if using npm:
 ```bash
 npm run dev
 ```
+
+### 5. Important Notes
+   - Use a private RPC for mainnet, to prevent timeouts
