@@ -12,7 +12,15 @@ const wormholeConfig: WormholeConnectConfig = {
   },
   network: "Mainnet",
   chains: ["Ethereum", "Solana", "Base"],
-  tokens: ["BIOeth", "BIOsol", "BIObase"],
+  tokens: [
+    "BIOeth", 
+    "BIOsol", 
+    "BIObase",
+    "GROWeth", 
+    "GROWsol", 
+    "QBIOeth", 
+    "QBIOsol"
+  ],
   ui: {
     title: "",
     defaultInputs: {
@@ -60,6 +68,54 @@ const wormholeConfig: WormholeConnectConfig = {
             ],
           },
         ],
+        GROW_NTT: [
+          {
+            chain: 'Ethereum',
+            manager: '0x24E85C241766E1e009388cdCe3B70096d2Fd6892',
+            token: '0x761A3557184cbC07b7493da0661c41177b2f97fA',
+            transceiver: [
+              {
+                address: '0x1cb452bEA141118f33ae076265d9302Fa1c7Fbf9',
+                type: 'wormhole',
+              },
+            ],
+          },
+          {
+            chain: 'Solana',
+            manager: 'nttgQT42hdZ1vNryzXwu2DzCVnxdDrAYyZnYs51gSSd',
+            token: 'growFDf9teg9gwVTTY3DgpPXU31qBrnbSQCqtY2vkR8',
+            transceiver: [
+              {
+                address: 'J5jVpK4ofWPRDiJofWtFccq2ftQqyUz7yseRAbgDv94u',
+                type: 'wormhole',
+              },
+            ],
+          },
+        ],
+        QBIO_NTT: [
+          {
+            chain: 'Ethereum',
+            manager: '0xD56541B73402519Ffc6CA32596ed2A1179752184',
+            token: '0x3E6A1b21bd267677Fa49BE6425aEbe2fc0f89bDE',
+            transceiver: [
+              {
+                address: '0x7c0C6E331Fe8b7368f1497d42f4f26c575F949e2',
+                type: 'wormhole',
+              },
+            ],
+          },
+          {
+            chain: 'Solana',
+            manager: 'nttmCZuaoLZ2TEyuo1qytxUJwW9v5Um7bhUgY9zhS6M',
+            token: 'qbioCGDnUBGX5qcK1Fc4zg19GaQEPmxHFMPMZQm4LZ8',
+            transceiver: [
+              {
+                address: 'EmdPKjjXoMsJ6Seek97d51zfJ9Ji4HEjRM5XVQ3KekCG',
+                type: 'wormhole',
+              },
+            ],
+          },
+        ],
       },
     }),
   ],
@@ -103,6 +159,58 @@ const wormholeConfig: WormholeConnectConfig = {
       icon: "https://499247139-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F3ba2jNU6BPQUl4RXgHor%2Fuploads%2FnVRhDT0Cg1c1FtdQQOMd%2FToken%20Symbol%20BIO%20Round.svg?alt=media&token=58f7ce22-da87-4a8f-80eb-5a4df20659f6",
       decimals: 18,
     },
+    GROWeth: {
+      key: 'GROWeth',
+      symbol: 'GROW',
+      nativeChain: 'Ethereum',
+      displayName: 'GROW',
+      tokenId: {
+        chain: 'Ethereum',
+        address: '0x761A3557184cbC07b7493da0661c41177b2f97fA'
+      },
+      coinGeckoId: 'valleydao',
+      icon: 'https://arweave.net/QsFe38-xJGwF8cQUJZbEIwpWuWgG2OTe15lcHibY9Y4',
+      decimals: 18
+    },
+    GROWsol: {
+      key: 'GROWsol',
+      symbol: 'GROW',
+      nativeChain: 'Solana',
+      displayName: 'GROW',
+      tokenId: {
+        chain: 'Solana',
+        address: 'growFDf9teg9gwVTTY3DgpPXU31qBrnbSQCqtY2vkR8'
+      },
+      coinGeckoId: 'valleydao',
+      icon: 'https://arweave.net/QsFe38-xJGwF8cQUJZbEIwpWuWgG2OTe15lcHibY9Y4',
+      decimals: 9
+    },
+    QBIOeth: {
+      key: 'QBIOeth',
+      symbol: 'QBIO',
+      nativeChain: 'Ethereum',
+      displayName: 'QBIO',
+      tokenId: {
+        chain: 'Ethereum',
+        address: '0x3E6A1b21bd267677Fa49BE6425aEbe2fc0f89bDE'
+      },
+      coinGeckoId: 'quantum-biology-dao',
+      icon: 'https://arweave.net/5CrrqFd2y_-axdpwtNSvEMgxPksiRBBPTjVcKh1RsAM',
+      decimals: 18
+    },
+    QBIOsol: {
+      key: 'QBIOsol',
+      symbol: 'QBIO',
+      nativeChain: 'Solana',
+      displayName: 'QBIO',
+      tokenId: {
+        chain: 'Solana',
+        address: 'qbioCGDnUBGX5qcK1Fc4zg19GaQEPmxHFMPMZQm4LZ8'
+      },
+      coinGeckoId: 'quantum-biology-dao',
+      icon: 'https://arweave.net/5CrrqFd2y_-axdpwtNSvEMgxPksiRBBPTjVcKh1RsAM',
+      decimals: 9
+    }
   },
 };
 
