@@ -8,10 +8,11 @@ const wormholeConfig: WormholeConnectConfig = {
   rpcs: {
     Ethereum: import.meta.env.VITE_PUBLIC_ETHEREUM_RPC_URL,
     Solana: import.meta.env.VITE_PUBLIC_SOLANA_RPC_URL,
+    Base: import.meta.env.VITE_PUBLIC_BASE_RPC_URL,
   },
   network: "Mainnet",
-  chains: ["Ethereum", "Solana"],
-  tokens: ["BIOeth", "BIOsol"],
+  chains: ["Ethereum", "Solana", "Base"],
+  tokens: ["BIOeth", "BIOsol", "BIObase"],
   ui: {
     title: "",
     defaultInputs: {
@@ -47,6 +48,17 @@ const wormholeConfig: WormholeConnectConfig = {
               },
             ],
           },
+          {
+            chain: "Base",
+            manager: "0x9AfEbcA0d37661167AFD24481C39eBE2Ead89571",
+            token: "0x226A2FA2556C48245E57cd1cbA4C6c9e67077DD2",
+            transceiver: [
+              {
+                address: "0xcb75cC365abD9713b9A9B9613d90e9C359dd483F",
+                type: "wormhole",
+              },
+            ],
+          },
         ],
       },
     }),
@@ -78,7 +90,19 @@ const wormholeConfig: WormholeConnectConfig = {
       icon: "https://499247139-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F3ba2jNU6BPQUl4RXgHor%2Fuploads%2FnVRhDT0Cg1c1FtdQQOMd%2FToken%20Symbol%20BIO%20Round.svg?alt=media&token=58f7ce22-da87-4a8f-80eb-5a4df20659f6",
       decimals: 18,
     },
-
+    BIObase: {
+      key: "BIObase",
+      symbol: "BIO",
+      nativeChain: "Base",
+      displayName: "BIO",
+      tokenId: {
+        chain: "Base",
+        address: "0x226A2FA2556C48245E57cd1cbA4C6c9e67077DD2",
+      },
+      coinGeckoId: "bio-protocol",
+      icon: "https://499247139-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F3ba2jNU6BPQUl4RXgHor%2Fuploads%2FnVRhDT0Cg1c1FtdQQOMd%2FToken%20Symbol%20BIO%20Round.svg?alt=media&token=58f7ce22-da87-4a8f-80eb-5a4df20659f6",
+      decimals: 18,
+    },
   },
 };
 
