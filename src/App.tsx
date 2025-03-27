@@ -54,7 +54,7 @@ import WormholeConnect, {
         symbol: 'WSV',
         tokenId: {
           chain: 'Solana',
-          address: '3vVrQXYzW9H5hp9PNkksSsU1UyhVBgYnbuJbW5u4z834'
+          address: '2vLDzr7hUpLFHQotmR8EPcMTWczZUwCK31aefAzumkmv'
         },
         icon: 'https://wormhole.com/token.png',
         decimals: 9
