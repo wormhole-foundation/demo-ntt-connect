@@ -6,15 +6,14 @@ import WormholeConnect, {
   
   const wormholeConfig: WormholeConnectConfig = {
     network: 'Testnet',
-    chains: ['Sepolia', 'Solana', 'BaseSepolia'],
-    tokens: ['WSVsep', 'WSVsol', 'WSVbase'],
+    chains: ['Solana', 'BaseSepolia'],
+    tokens: ['WSVsol', 'WSVbase'],
     ui: {
       title: 'Wormhole NTT UI',
       defaultInputs: {
-        fromChain: 'Sepolia',
-        toChain: 'Solana'
+        fromChain: 'Solana',
+        toChain: 'BaseSepolia'
       },
-      showHamburgerMenu: false,
     },
     // TODO: use a private RPC for mainnet
     // rpcs: {
@@ -24,17 +23,6 @@ import WormholeConnect, {
       ...nttRoutes({
         tokens: {
           WSV_NTT: [
-            {
-              chain: 'Sepolia',
-              manager: '0xD1542431f7da242Beebb72F283810fd6A40c62F7',
-              token: '0xAdB9299DCeAc8440844Ee1C980bf7F4fCc26780A',
-              transceiver: [
-                {
-                  address: '0x4C4e885E273e162b81a7D842521Eb1C9342c1d30',
-                  type: 'wormhole',
-                },
-              ],
-            },
             {
               chain: 'Solana',
               manager: 'nMxHx1o8GUg2pv99y8JAQb5RyWNqDWixbxWCaBcurQx',
@@ -62,42 +50,21 @@ import WormholeConnect, {
       }),
     ],
     tokensConfig: {
-      WSVsep: {
-        key: 'WSVsep',
-        symbol: 'WSV',
-        nativeChain: 'Sepolia',
-        displayName: 'WSV',
-        tokenId: {
-          chain: 'Sepolia',
-          address: '0xAdB9299DCeAc8440844Ee1C980bf7F4fCc26780A'
-        },
-        coinGeckoId: 'wormhole',
-        icon: 'https://wormhole.com/token.png',
-        decimals: 18
-      },
       WSVsol: {
-        key: 'WSVsol',
         symbol: 'WSV',
-        nativeChain: 'Solana',
-        displayName: 'WSV',
         tokenId: {
           chain: 'Solana',
-          address: '2vLDzr7hUpLFHQotmR8EPcMTWczZUwCK31aefAzumkmv'
+          address: '3vVrQXYzW9H5hp9PNkksSsU1UyhVBgYnbuJbW5u4z834'
         },
-        coinGeckoId: 'wormhole',
         icon: 'https://wormhole.com/token.png',
         decimals: 9
       },
       WSVbase: {
-        key: 'WSVbase',
         symbol: 'WSV',
-        nativeChain: 'BaseSepolia',
-        displayName: 'WSV',
         tokenId: {
           chain: 'BaseSepolia',
           address: '0xb8dccDA8C166172159F029eb003d5479687452bD'
         },
-        coinGeckoId: 'wormhole',
         icon: 'https://wormhole.com/token.png',
         decimals: 9
       }
