@@ -7,7 +7,7 @@ import WormholeConnect, {
   const wormholeConfig: WormholeConnectConfig = {
     network: 'Testnet',
     chains: ['Solana', 'BaseSepolia'],
-    tokens: ['WSVsol', 'WSVbase'],
+    tokens: ['WSV'],
     ui: {
       title: 'Wormhole NTT UI',
       defaultInputs: {
