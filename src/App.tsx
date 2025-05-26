@@ -20,6 +20,8 @@ const wormholeConfig: WormholeConnectConfig = {
     "GROWsol",
     "QBIOeth",
     "QBIOsol",
+    "NEURONeth",
+    "NEURONsol"
   ],
   ui: {
     title: "",
@@ -111,6 +113,30 @@ const wormholeConfig: WormholeConnectConfig = {
             transceiver: [
               {
                 address: "EmdPKjjXoMsJ6Seek97d51zfJ9Ji4HEjRM5XVQ3KekCG",
+                type: "wormhole",
+              },
+            ],
+          },
+        ],
+        NEURON_NTT: [
+          {
+            chain: "Ethereum",
+            manager: "0x8461ADa5A8F4C7f6E165bFb7798452dDB4C419D4",
+            token: "0xab814ce69E15F6B9660A3B184c0B0C97B9394A6b",
+            transceiver: [
+              {
+                address: "0xfCBeCc84af209B46da56d0433C5e7A9D4d3e3b64",
+                type: "wormhole",
+              },
+            ],
+          },
+          {
+            chain: "Solana",
+            manager: "NTT7seDbSws7fyMS1R8gf8ZFreQgAnNJiVi8n1fAQNf",
+            token: "neuRodi6Saw2cwDpud7FyAcjzqPBJDtr3fDTXE2Fu4j",
+            transceiver: [
+              {
+                address: "emZmj6HX93gSiJ9bsx9a8e7PXmDeUxwm3h1Kv6bgkXt",
                 type: "wormhole",
               },
             ],
@@ -209,6 +235,32 @@ const wormholeConfig: WormholeConnectConfig = {
       },
       coinGeckoId: "quantum-biology-dao",
       icon: "https://arweave.net/5CrrqFd2y_-axdpwtNSvEMgxPksiRBBPTjVcKh1RsAM",
+      decimals: 9,
+    },
+    NEURONeth: {
+      key: "NEURONeth",
+      symbol: "NEURON",
+      nativeChain: "Ethereum",
+      displayName: "NEURON",
+      tokenId: {
+        chain: "Ethereum",
+        address: "0xab814ce69E15F6B9660A3B184c0B0C97B9394A6b",
+      },
+      coinGeckoId: "cerebrum-dao",
+      icon: "https://bafybeic3v4mdmxk5tzsq7s5wcl4wryvwr74kqf6i63rblir2bylxbhtf2a.ipfs.w3s.link/neuron.png",
+      decimals: 18,
+    },
+    NEURONsol: {
+      key: "NEURONsol",
+      symbol: "NEURON",
+      nativeChain: "Solana",
+      displayName: "NEURON",
+      tokenId: {
+        chain: "Solana",
+        address: "neuRodi6Saw2cwDpud7FyAcjzqPBJDtr3fDTXE2Fu4j",
+      },
+      coinGeckoId: "cerebrum-dao",
+      icon: "https://bafybeic3v4mdmxk5tzsq7s5wcl4wryvwr74kqf6i63rblir2bylxbhtf2a.ipfs.w3s.link/neuron.png",
       decimals: 9,
     },
   },
