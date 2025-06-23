@@ -1,10 +1,12 @@
 import WormholeConnect, {
-    WormholeConnectConfig,
-    nttRoutes,
     WormholeConnectTheme,
+    type config,
   } from '@wormhole-foundation/wormhole-connect';
+import {
+  nttRoutes,
+} from '@wormhole-foundation/wormhole-connect/ntt';
   
-  const wormholeConfig: WormholeConnectConfig = {
+  const wormholeConfig: config.WormholeConnectConfig = {
     network: 'Testnet',
     chains: ['Solana', 'BaseSepolia'],
     tokens: ['WSV'],
