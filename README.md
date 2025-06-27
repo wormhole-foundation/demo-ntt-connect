@@ -1,13 +1,13 @@
 # Wormhole NTT Connect demo
 
-This project sets up a Vite-React TypeScript application and integrates it with the Wormhole Connect SDK.
+This project sets up a Next.js React TypeScript application and integrates it with the Wormhole Connect SDK.
 
 ## Prerequisites
 
 Ensure you have the following installed on your system:
 
 - **Node.js** & **TypeScript**
-- **npm** or **yarn**
+- **npm**
 
 ## Setup
 
@@ -22,29 +22,19 @@ cd demo-ntt-connect
 
 ### 2. Download Dependencies
 
-Make sure to install all required dependencies using `npm` or `yarn`:
+Install all required dependencies using npm:
 
 ```bash
-# Using npm
 npm install
-
-# Or using yarn
-yarn
 ```
 
 ### 3. Adjust WormholeConnectConfig
 
-Adjust the `WormholeConnectConfig` in `App.tsx` based on the `deployment.json` file from your NTT deployment. This configuration is essential to ensure proper integration with your deployment environment.
+Adjust the `WormholeConnectConfig` in `src/app/page.tsx` based on the `deployment.json` file from your NTT deployment. This configuration is essential to ensure proper integration with your deployment environment.
 
 ### 4. Run the App
 
-Finally, run your application:
-
-```bash
-yarn dev
-```
-
-or, if using npm:
+Start the development server:
 
 ```bash
 npm run dev

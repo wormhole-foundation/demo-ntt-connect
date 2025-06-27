@@ -1,0 +1,13 @@
+/* Global CSS Reset and Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #1a1a1a;
+  font-family: Inter, system-ui, sans-serif;
+} 
