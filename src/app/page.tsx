@@ -9,20 +9,20 @@ import {
 
 const wormholeConfig: config.WormholeConnectConfig = {
   network: 'Mainnet',
-  chains: ['Solana', 'Bsc'],
+  chains: ['Solana', 'Base'],
   tokens: ['ASSDAQ'],
   ui: {
     title: 'ASSDAQ Wormhole NTT',
     defaultInputs: {
       fromChain: 'Solana',
-      toChain: 'Bsc'
+      toChain: 'Base'
     },
     // walletConnectProjectId: '', 
   },
   // TODO: use a private RPC for mainnet
     rpcs: {
 			Solana: 'https://solana-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
-			Bsc: 'https://bnb-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
+      Base: 'https://base-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
 		},
   routes: [
     ...nttRoutes({
@@ -39,13 +39,13 @@ const wormholeConfig: config.WormholeConnectConfig = {
 					},
 					],
 				},
-				{
-					chain: 'Bsc',
-					manager: '0xC5ef16Ac420D24846a123fbeA74548DA18fC3735',
-					token: '0x423A93E4FAEB739F1243CaF6f242711B399B048d',
+        {
+					chain: 'Base',
+					manager: '0xc59F83D2586Cab39FcE40D9c3cFF457255ce43D8',
+					token: '0x2A47d3C2D31C36be715a8a90Ecb922A0b97107d9',
 					transceiver: [
 					{
-						address: '0x12B0a86Cc149C1C3CD9104C22BE3059Cb5D39b59',
+						address: '0xC0d8056651e7acF4918B788dAe28D8Df72D24313',
 						type: 'wormhole',
 					},
 					],
@@ -64,11 +64,11 @@ const wormholeConfig: config.WormholeConnectConfig = {
 				icon: 'https://assdaq.win/logo.jpg',
 				decimals: 6,
 			},
-			ASSDAQbsc: {
+      ASSDAQbase: {
 				symbol: 'ASSDAQ',
 				tokenId: {
-					chain: 'Bsc',
-					address: '0x423A93E4FAEB739F1243CaF6f242711B399B048d',
+					chain: 'Base',
+					address: '0x2A47d3C2D31C36be715a8a90Ecb922A0b97107d9',
 				},
 				icon: 'https://assdaq.win/logo.jpg',
 				decimals: 18,
