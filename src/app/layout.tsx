@@ -1,8 +1,8 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Wormhole NTT Connect',
-  description: 'Cross-chain token transfers with Wormhole NTT',
+  title: 'ASSDAQ Wormhole NTT Connect',
+  description: 'Cross-chain ASSDAQ transfers with Wormhole NTT',
 }
 
 export default function RootLayout({
