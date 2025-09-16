@@ -2,10 +2,6 @@
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
-  serverExternalPackages: [
-    "@wormhole-foundation/wormhole-connect",
-    // Add any other specific Wormhole packages you are using
-  ],
   // Disable source maps in development to reduce console noise
   productionBrowserSourceMaps: false,
   experimental: {
@@ -31,6 +27,8 @@ const nextConfig = {
 
     return config;
   },
+  // Transpile Wormhole packages
+  transpilePackages: ['@wormhole-foundation/wormhole-connect'],
   // Reduce console output
   logging: {
     fetches: {
