@@ -6,6 +6,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Next.js
+.open-next
 .next/
 out/
 build/

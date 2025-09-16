@@ -31,8 +31,6 @@ const nextConfig = {
 
     return config;
   },
-  // Transpile Wormhole packages
-  transpilePackages: ['@wormhole-foundation/wormhole-connect'],
   // Reduce console output
   logging: {
     fetches: {
