@@ -9,7 +9,7 @@ import {
 
 const wormholeConfig: config.WormholeConnectConfig = {
   network: 'Mainnet',
-  chains: ['Solana', 'Ethereum', 'Bsc', 'Base'],
+  chains: ['Solana', 'Ethereum'],
   tokens: ['ASSDAQ'],
   ui: {
     title: 'ASSDAQ Wormhole NTT',
@@ -17,13 +17,11 @@ const wormholeConfig: config.WormholeConnectConfig = {
       fromChain: 'Solana',
       toChain: 'Ethereum'
     },
-    // walletConnectProjectId: '', 
+    walletConnectProjectId: '783b57fa9f912c0e22c9885b7ec51194', 
   },
   // TODO: use a private RPC for mainnet
     rpcs: {
 			Solana: 'https://solana-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
-			Base: 'https://base-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
-			Bsc: 'https://bnb-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
 			Ethereum: 'https://eth-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
 	},
   	routes: [
@@ -32,54 +30,32 @@ const wormholeConfig: config.WormholeConnectConfig = {
 				ASSDAQ: [
 				{
 					chain: 'Solana',
-					manager: 'nTtqL6GRSGRRdkbPDsNcU5yseJWDKRUpCHyz1dWgP1G',
+					manager: 'NTtqw55qyL2582gLjVoDTYKHTUwFbUAwgui8UN6nVrn',
 					token: '7Tx8qTXSakpfaSFjdztPGQ9n2uyT1eUkYz7gYxxopump',
 					transceiver: [
 					{
-						address: '8mevnsXEVBRgFSPEhMVJKiJFMRwdv4irSMYaAnoF3puB',
-						type: 'wormhole',
-					},
-					],
-				},
-				{
-					chain: 'Base',
-					manager: '0x181098Af37976C4beD8026bb2c5DC8a9d752102A',
-					token: '0xdBF2B6Cc13deB203B52BFF5777d7541e6342ee31',
-					transceiver: [
-					{
-						address: '0xBcB1AB67749D90D1Bf576f8F04EeF54ecCec5a61',
-						type: 'wormhole',
-					},
-					],
-				},
-				{
-					chain: 'Bsc',
-					manager: '0x181098Af37976C4beD8026bb2c5DC8a9d752102A',
-					token: '0xdBF2B6Cc13deB203B52BFF5777d7541e6342ee31',
-					transceiver: [
-					{
-						address: '0xBcB1AB67749D90D1Bf576f8F04EeF54ecCec5a61',
+						address: '8BFpjjxeEP4ZVEvf33nbsW1ZgRiMR6YMPrmYdp6EescY',
 						type: 'wormhole',
 					},
 					],
 				},
 				{
 					chain: 'Ethereum',
-					manager: '0x181098Af37976C4beD8026bb2c5DC8a9d752102A',
-					token: '0xdBF2B6Cc13deB203B52BFF5777d7541e6342ee31',
+					manager: '0x3c100D5AfB0dDb41aC0D1e374040B8255b38f78a',
+					token: '0xF4F53989d770458B659f8D094b8E31415F68A4Cf',
 					transceiver: [
 					{
-						address: '0xBcB1AB67749D90D1Bf576f8F04EeF54ecCec5a61',
+						address: '0x1150B0cefAc880e488c6d386f0d9A5f6cF73C06B',
 						type: 'wormhole',
 					},
 					],
 				},
-				],
-			},
-			}),
-  ],
-  tokensConfig: {
-    ASSDAQsol: {
+			],
+		},
+		}),
+	],
+  	tokensConfig: {
+    	ASSDAQsol: {
 				symbol: 'ASSDAQ',
 				tokenId: {
 					chain: 'Solana',
@@ -87,35 +63,17 @@ const wormholeConfig: config.WormholeConnectConfig = {
 				},
 				icon: 'https://assdaq.win/logo.jpg',
 				decimals: 6,
-	},
-	ASSDAQbase: {
+		},
+		ASSDAQethereum: {
 				symbol: 'ASSDAQ',
 				tokenId: {
-					chain: 'Base',
-					address: '0xdBF2B6Cc13deB203B52BFF5777d7541e6342ee31',
+					chain: 'Ethereum',
+					address: '0xF4F53989d770458B659f8D094b8E31415F68A4Cf',
 				},
 				icon: 'https://assdaq.win/logo.jpg',
 				decimals: 18,
-	},
-	ASSDAQbsc: {
-				symbol: 'ASSDAQ',
-				tokenId: {
-					chain: 'Base',
-					address: '0xdBF2B6Cc13deB203B52BFF5777d7541e6342ee31',
-				},
-				icon: 'https://assdaq.win/logo.jpg',
-				decimals: 18,
-	},
-	ASSDAQethereum: {
-				symbol: 'ASSDAQ',
-				tokenId: {
-					chain: 'Base',
-					address: '0xdBF2B6Cc13deB203B52BFF5777d7541e6342ee31',
-				},
-				icon: 'https://assdaq.win/logo.jpg',
-				decimals: 18,
-	},
-  }
+		},
+  	}
 }
 
 export default function Home() {
