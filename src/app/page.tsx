@@ -9,7 +9,7 @@ import {
 
 const wormholeConfig: config.WormholeConnectConfig = {
   network: 'Mainnet',
-  chains: ['Solana', 'Ethereum'],
+  chains: ['Solana', 'Ethereum', 'Base', 'Bsc'],
   tokens: ['ASSDAQ'],
   ui: {
     title: 'ASSDAQ Wormhole NTT',
@@ -23,6 +23,8 @@ const wormholeConfig: config.WormholeConnectConfig = {
     rpcs: {
 			Solana: 'https://solana-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
 			Ethereum: 'https://eth-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
+			Base: 'https://base-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
+			Bsc: 'https://bnb-mainnet.g.alchemy.com/v2/teJ8fphdkw5QEwQ0kANwCAEDKn5iGLVw',
 	},
   	routes: [
     	...nttRoutes({
@@ -50,6 +52,28 @@ const wormholeConfig: config.WormholeConnectConfig = {
 					},
 					],
 				},
+				{
+					chain: 'Base',
+					manager: '0xb6209417534E1EE9b6484ea9489dB7382f094E89',
+					token: '0xAE60f142a02825C31E199C7c381aC94F287E34D2',
+					transceiver: [
+					{
+						address: '0xAA17616bD9Dcb362c62E8E117bb41048085bfa81',
+						type: 'wormhole',
+					},
+					],
+				},
+				{
+					chain: 'Bsc',
+					manager: '0x8b3f575B201972710f9300c33bDcDc08597228DE',
+					token: '0xAA17616bD9Dcb362c62E8E117bb41048085bfa81',
+					transceiver: [
+					{
+						address: '0x1737A6BF34EEeE8e2885D3574971C019000bA9Fa',
+						type: 'wormhole',
+					},
+					],
+				},
 			],
 		},
 		}),
@@ -69,6 +93,24 @@ const wormholeConfig: config.WormholeConnectConfig = {
 				tokenId: {
 					chain: 'Ethereum',
 					address: '0xF4F53989d770458B659f8D094b8E31415F68A4Cf',
+				},
+				icon: 'https://assdaq.win/logo.jpg',
+				decimals: 18,
+		},
+		ASSDAQbase: {
+				symbol: 'ASSDAQ',
+				tokenId: {
+					chain: 'Base',
+					address: '0xAE60f142a02825C31E199C7c381aC94F287E34D2',
+				},
+				icon: 'https://assdaq.win/logo.jpg',
+				decimals: 18,
+		},
+		ASSDAQbsc: {
+				symbol: 'ASSDAQ',
+				tokenId: {
+					chain: 'Bsc',
+					address: '0xAA17616bD9Dcb362c62E8E117bb41048085bfa81',
 				},
 				icon: 'https://assdaq.win/logo.jpg',
 				decimals: 18,
