@@ -11,7 +11,6 @@ out/
 build/
 
 /node_modules
-package-lock.json
 dist
 dist-ssr
 *.local
@@ -26,3 +25,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+test-results/.last-run.json
