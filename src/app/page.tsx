@@ -14,8 +14,14 @@ const wormholeConfig: config.WormholeConnectConfig = {
   ui: {
     title: 'Wormhole NTT UI',
     defaultInputs: {
-      fromChain: 'Solana',
-      toChain: 'BaseSepolia'
+      source: {
+        chain: 'Solana',
+        token: 'WSV',
+      },
+      destination: {
+        chain: 'BaseSepolia',
+        token: 'WSV',
+      },
     },
     // walletConnectProjectId: '', 
   },
