@@ -14,8 +14,14 @@ const wormholeConfig: config.WormholeConnectConfig = {
   ui: {
     title: 'ASSDAQ Wormhole NTT',
     defaultInputs: {
-      fromChain: 'Solana',
-      toChain: 'Ethereum'
+      source: {
+		chain: 'Solana',
+		token: '7Tx8qTXSakpfaSFjdztPGQ9n2uyT1eUkYz7gYxxopump',
+	  },
+	  destination: {
+		chain: 'Ethereum',
+		token: '0xF4F53989d770458B659f8D094b8E31415F68A4Cf',
+	  }
     },
     walletConnectProjectId: '783b57fa9f912c0e22c9885b7ec51194', 
   },

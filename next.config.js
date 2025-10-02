@@ -1,12 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: true,
   // Disable source maps in development to reduce console noise
   productionBrowserSourceMaps: false,
-  experimental: {
-    esmExternals: 'loose',
-  },
   webpack: (config) => {
     // Essential fallbacks for Wormhole Connect
     config.resolve.fallback = {
