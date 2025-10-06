@@ -7,7 +7,7 @@ This project sets up a Next.js React TypeScript application and integrates it wi
 Ensure you have the following installed on your system:
 
 - **Node.js** & **TypeScript**
-- **npm**
+- **Yarn**
 
 ## Setup
 
@@ -22,10 +22,10 @@ cd demo-ntt-connect
 
 ### 2. Download Dependencies
 
-Install all required dependencies using npm:
+Install all required dependencies using Yarn:
 
 ```bash
-npm install
+yarn
 ```
 
 ### 3. Adjust WormholeConnectConfig
@@ -37,7 +37,7 @@ Adjust the `WormholeConnectConfig` in `src/app/page.tsx` based on the `deploymen
 Start the development server:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ### 5. Important Notes
