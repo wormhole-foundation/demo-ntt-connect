@@ -8,8 +8,8 @@ import {
 } from '@wormhole-foundation/wormhole-connect/ntt';
 
 const wormholeConfig: config.WormholeConnectConfig = {
-  network: 'Testnet',
-  chains: ['Solana', 'BaseSepolia'],
+  network: 'Mainnet',
+  chains: ['Solana', 'Monad'],
   tokens: ['WSV'],
   ui: {
     title: 'Wormhole NTT UI',
@@ -19,7 +19,7 @@ const wormholeConfig: config.WormholeConnectConfig = {
         token: 'WSV',
       },
       destination: {
-        chain: 'BaseSepolia',
+        chain: 'Monad',
         token: 'WSV',
       },
     },
@@ -45,7 +45,7 @@ const wormholeConfig: config.WormholeConnectConfig = {
             ],
           },
           {
-            chain: 'BaseSepolia',
+            chain: 'Monad',
             manager: '0xaE02Ff9C3781C5BA295c522fB469B87Dc5EE9205',
             token: '0xb8dccDA8C166172159F029eb003d5479687452bD',
             transceiver: [
@@ -69,10 +69,10 @@ const wormholeConfig: config.WormholeConnectConfig = {
       icon: 'https://wormhole.com/token.png',
       decimals: 9
     },
-    WSVbase: {
+    WSVmon: {
       symbol: 'WSV',
       tokenId: {
-        chain: 'BaseSepolia',
+        chain: 'Monad',
         address: '0xb8dccDA8C166172159F029eb003d5479687452bD'
       },
       icon: 'https://wormhole.com/token.png',
