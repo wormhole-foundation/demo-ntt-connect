@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "daily"
     cooldown:
-      default: 7
+      default-days: 7
     # Only update Wormhole dependencies
     allow:
       - dependency-name: "@wormhole-foundation/*"
